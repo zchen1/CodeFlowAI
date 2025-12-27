@@ -1,0 +1,33 @@
+{
+  "theme": "base",
+  "securityLevel": "loose",
+
+  "themeVariables": {
+    "lineColor": "#3a3a3a",
+    "textColor": "#222222",
+
+    "edgeWidth": 1.6,
+
+    "arrowheadWidth": 10,
+    "arrowheadHeight": 10,
+
+
+    "primaryColor": "#EDF2FF",
+    "primaryBorderColor": "#6B8AFB"
+  },
+
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis",
+    "diagramPadding": 10,
+    "nodeSpacing": 40,
+    "rankSpacing": 40,
+    "arrowMarkerAbsolute": true
+  },
+
+  "themeCSS": ".node rect:not([rx]){fill:#F7F9FC;stroke:#7AA2F7;stroke-width:1px;} .node rect[rx]{fill:#E6FFFA;stroke:#2DB6A3;stroke-width:1px;} .node polygon{fill:#FFF7E6;stroke:#F0A020;stroke-width:1px;} .edgePath path{stroke-width:1.6px;stroke:#3a3a3a;}",
+
+  "viewport": { "width": 1200, "height": 800, "deviceScaleFactor": 1.5 },
+
+  "pdf": { "fit": true, "pageRanges": "1", "printBackground": true }
+}

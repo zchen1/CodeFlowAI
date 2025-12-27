@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CodeFlowAI IR",
+  "type": "object",
+  "required": ["version", "nodes", "edges"],
+  "properties": {
+    "version": { "const": "0.1" },
+    "nodes": { "type": "array" },
+    "edges": { "type": "array" },
+    "subgraphs": { "type": "array" }
+  }
+}

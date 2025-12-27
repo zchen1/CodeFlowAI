@@ -1,0 +1,11 @@
+{
+  "__deprecated__": "This file is retained only for legacy reference and MUST NOT be used in the pipeline. Use a single source of truth: configs/mermaid.config.json + --pdfFit in pdf_exporter.",
+  "pdf": {
+    "format": "A4",
+    "landscape": false,
+    "printBackground": true,
+    "margin": { "top": "16mm", "right": "16mm", "bottom": "16mm", "left": "16mm" },
+    "preferCSSPageSize": true,
+    "scale": 1.0
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "theme": "base",
+  "themeVariables": {
+    "lineColor": "#333333",
+    "fontSize": "14px",
+    "fontFamily": "Arial, sans-serif",
+    "nodeBorder": "#333333",
+    "nodeTextColor": "#111111",
+    "clusterBkg": "#ffffff",
+    "clusterBorder": "#999999",
+    "edgeLabelBackground": "#ffffff",
+    "arrowheadColor": "#333333",
+    "arrowheadHeight": "10",
+    "arrowheadWidth": "10",
+    "edgeWidth": "2.0",
+    "textColor": "#222",
+    "primaryColor": "#EDF2FF",
+    "primaryBorderColor": "#6B8AFB"
+  },
+  "themeCSS": ".svg{outline:6px solid magenta !important;} .node rect:not([rx]){fill:#F7F9FC;stroke:#7AA2F7;stroke-width:1px;} .node rect[rx]{fill:#F3E8FF;stroke:#8B5CF6;stroke-width:1px;} .node polygon{fill:#FFF7E6;stroke:#F0A020;stroke-width:0.5px;} .edgePath path{stroke-width:2px;}",
+  "flowchart": {
+    "htmlLabels": true,
+    "curve": "basis",
+    "diagramPadding": 10,
+    "nodeSpacing": 40,
+    "rankSpacing": 40,
+    "arrowMarkerAbsolute": true
+  },
+  "launchOptions": {
+    "args": ["--no-sandbox", "--disable-dev-shm-usage"],
+    "protocolTimeout": 120000
+  },
+  "viewport": {
+    "width": 1600,
+    "height": 2400,
+    "deviceScaleFactor": 2
+  },
+  "pdf": {
+    "format": "A4",
+    "landscape": false,
+    "printBackground": true,
+    "margin": { "top": "12mm", "right": "12mm", "bottom": "12mm", "left": "12mm" },
+    "preferCSSPageSize": true,
+    "scale": 1.0
+  }
+}

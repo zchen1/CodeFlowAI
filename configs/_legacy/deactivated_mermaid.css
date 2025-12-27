@@ -1,0 +1,126 @@
+/* mermaid.css — CodeFlowAI styles (v11-safe)
+   - Controls lines, arrow color/weight, and shape-based node coloring.
+   - Renderer remains structure-only; no %%init%%, no classes required.
+   - If you need arrow *size* (not just thickness), see the EXPERIMENT section.
+*/
+
+/* ====== Global (optional debug probe) ======
+   Enable once if you need to verify CSS is loaded:
+   svg { outline: 6px solid magenta !important; }
+*/
+
+/* ========== Edges ========== */
+.edgePath path {
+  stroke: #3a3a3a !important;     /* lineColor */
+  stroke-width: 2.2px !important;  /* edgeWidth visual */
+  stroke-linecap: round !important;
+  fill: none !important;
+}
+
+/* Edge labels */
+.edgeLabel {
+  color: #222 !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 13px !important;
+  background: #ffffff !important;
+}
+
+/* ========== Arrowheads (color/thickness) ==========
+   v11 flowchart often uses <defs><marker>… for triangles.
+   We style both the generic .arrowheadPath and marker paths.
+   NOTE: These rules *do not guarantee* geometric scaling in v11.
+*/
+.arrowheadPath,
+marker[id*="arrow"] path,
+marker[id*="Arrow"] path,
+marker[id*="arrowHead"] path,
+marker[id*="arrowhead"] path,
+defs marker[id*="arrow"] path,
+defs marker[id*="Arrow"] path,
+defs marker[id*="arrowHead"] path,
+defs marker[id*="arrowhead"] path {
+  stroke: #3a3a3a !important;
+  fill:   #3a3a3a !important;
+  stroke-width: 2.2px !important;  /* keep consistent with edges */
+}
+
+/* Keep square endpoint markers (pointEnd) unchanged */
+marker[id*="point"] path,
+defs marker[id*="point"] path {
+  transform: none !important;
+  stroke-width: initial !important;
+  stroke: currentColor !important;
+  fill:   currentColor !important;
+}
+
+/* ====== Node base text ====== */
+.node text {
+  fill: #222 !important;
+  font-family: Arial, sans-serif !important;
+  font-size: 14px !important;
+}
+
+/* ====== Shape-based node colors (no classes needed) ======
+   rect:not([rx])  → normal process
+   rect[rx]        → start/end (rounded)
+   polygon         → decision (diamond)
+*/
+.node rect:not([rx]) {
+  fill: #F7F9FC !important;        /* light gray-blue */
+  stroke: #7AA2F7 !important;      /* blue border */
+  stroke-width: 1px !important;
+  rx: 0; ry: 0;
+}
+
+.node rect[rx] {
+  fill: #E6FFFA !important;        /* mint */
+  stroke: #2DB6A3 !important;      /* teal border */
+  stroke-width: 1px !important;
+}
+
+.node polygon {
+  fill: #FFF7E6 !important;        /* light amber */
+  stroke: #F0A020 !important;      /* amber border */
+  stroke-width: 1px !important;
+}
+
+/* ====== Clusters / groups (optional) ====== */
+.cluster rect {
+  fill: #ffffff !important;
+  stroke: #bdbdbd !important;
+  stroke-width: 1px !important;
+}
+.cluster text {
+  fill: #444 !important;
+  font-weight: 600 !important;
+}
+
+/* ====== EXPERIMENT: attempt to scale arrow geometry in some v11 builds ======
+   If your CLI build allows marker scaling, uncomment ONE of the blocks below
+   and adjust scale(1.0 ~ 3.0). If there is no visible change, your build
+   fixes marker viewBox and ignores transforms (typical in v11).
+*/
+
+/* --- Try gentle scaling of triangle markers ---
+marker[id*="arrow"] path,
+marker[id*="Arrow"] path,
+marker[id*="arrowHead"] path,
+marker[id*="arrowhead"] path,
+defs marker[id*="arrow"] path,
+defs marker[id*="Arrow"] path,
+defs marker[id*="arrowHead"] path,
+defs marker[id*="arrowhead"] path,
+.arrowheadPath {
+  transform: scale(1.4) !important;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+*/
+
+/* --- Aggressive scaling (last resort) ---
+marker path {
+  transform: scale(1.8) !important;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+*/

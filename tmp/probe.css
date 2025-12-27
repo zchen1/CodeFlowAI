@@ -1,0 +1,33 @@
+svg {
+  outline: 10px solid magenta !important;
+}
+.node rect:not([rx]) {
+  fill: #F7F9FC;
+  stroke: #7AA2F7;
+  stroke-width: 1px;
+}
+.node rect[rx] {
+  fill: #E6FFFA;
+  stroke: #2DB6A3;
+  stroke-width: 1px;
+}
+.node polygon {
+  fill: #FFF7E6;
+  stroke: #F0A020;
+  stroke-width: 1px;
+}
+.edgePath path {
+  stroke-width: 3px !important;
+}
+.arrowheadPath {
+  stroke-width: 3px !important;
+  transform: scale(2) !important;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+marker path {
+  stroke-width: 3px !important;
+  transform: scale(2) !important;
+  transform-box: fill-box;
+  transform-origin: center;
+}

@@ -1,0 +1,24 @@
+# 告诉 pip 这个项目用什么“构建系统”来打包
+[build-system]
+requires = ["hatchling>=1.25"]   # hatchling 是一种现代打包工具，替代 setuptools
+build-backend = "hatchling.build" # 让 pip 知道安装本项目时应使用 hatchling 来构建
+
+# 项目基本信息（元数据）
+[project]
+name = "codeflowai"               # 包的名字（pip install codeflowai）
+version = "0.0.1"                 # 当前版本号（未来发布 PyPI 会用到）
+description = "Source → IR → Mermaid → .mmd/.svg/.pdf"  # 可选的简介
+readme = "README.md"              # 项目的 README，会用于 PyPI 页面
+requires-python = ">=3.9"         # 限制 Python 版本（你以后可以改 >=3.10 等）
+
+# 项目依赖（目前留空，后面你会加 asttokens、jsonschema、networkx 等）
+dependencies = []
+
+# 这块最关键：注册命令行入口
+[project.scripts]
+codeflowai = "codeflowai.cli:main"
+# ↑ 意思：终端执行 `codeflowai` 时去调用 src/codeflowai/cli.py 里的 main()
+
+# 下面这段告诉 hatchling：包的代码在哪里（采用 src 布局）
+[tool.hatch.build.targets.wheel]
+packages = ["src/codeflowai"]
