@@ -25,13 +25,13 @@ CodeFlowAI explores the following research questions:
 CodeFlowAI implements an end-to-end pipeline that converts source code into structured representations:
 
 Source Code
-↓
+→
 Parser
-↓
+→
 Intermediate Representation (IR)
-↓
+→
 Control-Flow Graph (CFG)
-↓
+→
 Visualization / Export (Mermaid, SVG, PDF)
 
 yaml
@@ -91,4 +91,4 @@ This project is under active development and is intended as a **research prototy
 
 ## License
 
-This project is released for academic and research purposes.
+This project is intended for academic and research use only.
